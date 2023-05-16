@@ -30,7 +30,7 @@ void GetglfwWind()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	_window = glfwCreateWindow(800, 600,
-		"demo", NULL, NULL);
+		"GameDemo", NULL, NULL);
 	if (_window == NULL)
 	{
 		cout << "Failed to create GLFW window" << endl;
@@ -62,7 +62,9 @@ void UpdateGLFWwindow()
 	{
 		//输入检测
 		ProcessInput(_window);
+
 		//渲染
+		Redner();
 
 		//检查调用 交换缓冲
 		glfwSwapBuffers(_window);
@@ -78,4 +80,11 @@ void ProcessInput(GLFWwindow* window)
 		glfwSetWindowShouldClose(window, true);
 }
 
-
+/// <summary>
+/// 渲染
+/// </summary>
+void Redner()
+{
+	glClearColor(0.5f, 0.7f, 0.2f, 1.0f);//擦除屏幕填充的颜色
+	glClear(GL_COLOR_BUFFER_BIT);//擦出颜色 GL_DEPTH_BUFFER_BIT深度 GL_STENCIL_BUFFER_BIT模板
+}
