@@ -146,11 +146,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DebugTool\Debug.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Tool\CommonTool.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DebugTool\Debug.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="Tool\CommonTool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

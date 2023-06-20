@@ -1,7 +1,15 @@
 #pragma once
 
-void GetglfwWind();
-void FrameBufferSizeCallBack(GLFWwindow* window, int w, int h);
-void UpdateGLFWwindow();
-void ProcessInput(GLFWwindow* window);
-void Redner();
+GLFWwindow* window;
+const unsigned int SCR_WIDTH = 800;
+const unsigned int SCR_HEIGHT = 600;
+
+void Initglfw();
+bool CreateGLFWwindow();
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+bool LoadGL();
+void ProcessInput(GLFWwindow* windwow);
+
+void Rander();
+void ClearWidow();
+bool CreateVertexShader(const char*, unsigned int*);
